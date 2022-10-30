@@ -2,19 +2,15 @@
 
 ## Description
 
-Your assignment this week is emblematic of the fact that most modern websites are driven by two things: data and user demands. This shouldn't come as a surprise, as the ability to personalize user data is the cornerstone of real-world web development today. And as user demands evolve, applications need to be more performant.
+This application is based on a fully functioning Google Books API search engine which was built with a RESTful API. The code was refactored to use GraphQL API and Apollo Server. The app was built using the MERN stack with a React front end, MongoDB database, and Node.js/Express.js server and API.
 
-This week, you’ll take starter code with a fully functioning Google Books API search engine built with a RESTful API, and refactor it to be a GraphQL API built with Apollo Server. The app was built using the MERN stack with a React front end, MongoDB database, and Node.js/Express.js server and API. It's already set up to allow users to save book searches to the back end. 
+1. The application uses an Apollo Server to use GraphQL queries and mutations to fetch and modify data, replacing the RESTful API from the starter code.
 
-To complete the assignment, you’ll need to do the following:
+2. The authentication middleware was modified so it works in the context of a GraphQL API.
 
-1. Set up an Apollo Server to use GraphQL queries and mutations to fetch and modify data, replacing the existing RESTful API.
+3. An Apollo Provider was created so that requests can communicate with an Apollo Server.
 
-2. Modify the existing authentication middleware so that it works in the context of a GraphQL API.
-
-3. Create an Apollo Provider so that requests can communicate with an Apollo Server.
-
-4. Deploy your application to Heroku with a MongoDB database using MongoDB Atlas. Use the [Deploy with Heroku and MongoDB Atlas](https://coding-boot-camp.github.io/full-stack/mongodb/deploy-with-heroku-and-mongodb-atlas) walkthrough for instructions.
+4. The application was deployed to Heroku with a MongoDB database using MongoDB Atlas.
 
 ## User Story
 
@@ -64,20 +60,21 @@ Screenshot goes here
 
 ## Required Packages
 
-The following packages are required to use the application
-
-    * MySQL
-
-    * Inquirer
-
-    * NPM console table package
+Install the required dependendcies with the following terminal command:
+```sh
+npm install
+```
 
 ## Use
 
-```md
-Create .env file using the example template
-Source the schema.sql in MySQL
-Run npm i && npm start in terminal to run application
+Users login with their user ID and password and type a search term in a search box and the results display on the screen.
+
+Users can then save search results by clicking the "Save This Book!" button, whch saves the book to be retrieved later.
+
+After cloning the repository and installing the required npm packages, users can start the application locally with the folloiwng terminal command:
+
+```sh
+npm run develop
 ```
 
 ## License 
