@@ -56,7 +56,7 @@ THEN I am logged out of the site and presented with a menu with the options Sear
 
 ## Screenshot
 
-Screenshot goes here
+![Screenshot of deployed application on browser".](./client/assets/Screenshot.png)
 
 ## Required Packages
 
