@@ -1,5 +1,5 @@
 import React from 'react';
-// import { getMe, deleteBook } from '../utils/API';
+// this imports the { getMe, deleteBook } data from '../utils/API';
 
 import { useQuery, useMutation } from '@apollo/client';
 import { Jumbotron, Container, CardColumns, Card, Button } from 'react-bootstrap';
@@ -17,7 +17,7 @@ const SavedBooks = () => {
 
   const userData = data?.me || {};
 
-  // create function that accepts the book's mongo _id value as param and deletes the book from the database
+  // this deletes a book from saved when there is a bookId match
   const handleDeleteBook = async (bookId) => {
 
     const token = Auth.loggedIn() ? Auth.getToken() : null;
@@ -42,7 +42,6 @@ const SavedBooks = () => {
     }
   };
 
-  // if data isn't here yet, say so
   if (loading) {
     return <h2>LOADING...</h2>;
   }

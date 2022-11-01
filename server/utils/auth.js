@@ -1,14 +1,13 @@
 const jwt = require('jsonwebtoken');
-// set token secret and expiration date
+// this makes the token secret and gives the token 2 hour expiration
 const secret = 'mysecretssshhhhhhh';
 const expiration = '2h';
 
 module.exports = {
-  // allows token to be sent via  req.query or headers
+  // allows token to be sent via  req.query or h
   authMiddleware: function ({ req }) {
     let token = req.body.token || req.query.token || req.headers.authorization;
     
-    // ["Bearer", "<tokenvalue>"]
     if (req.headers.authorization) {
       token = token.split(' ').pop().trim();
     }
@@ -25,9 +24,6 @@ module.exports = {
     }
 
     return req;
-    // send to next endpoint
-    // graphQL doesn't use endpoints
-    // next();
   },
   signToken: function ({ email, username, _id }) {
     const payload = { email, username, _id };
